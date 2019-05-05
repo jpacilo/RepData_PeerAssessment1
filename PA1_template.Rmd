@@ -68,7 +68,7 @@ activity_dt <- fread(input = "data/activity.csv")
 # remove the NAs along the way using the na.rm flag
 steps_per_day <- activity_dt %>% 
                  group_by(date) %>% 
-                 summarise(steps = sum(steps, na.rm = TRUE))  
+                 summarise(steps = sum(steps, na.rm = F))  
 
 ggplot(steps_per_day, aes(x = steps)) +
        geom_histogram(fill = "blue", binwidth = 1000) +
